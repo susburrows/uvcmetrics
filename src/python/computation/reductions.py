@@ -1417,13 +1417,13 @@ def reconcile_units( mv1, mv2, preferred_units=None ):
             mv1.units = 'W/m^2'
         if mv2.units == 'W/m~S~2~N~' or mv2.units == 'W/m~S~2~N':
             mv2.units = 'W/m^2'
-        if mv1.units =='fraction' and mv2.units == 'percent':
+        if mv1.units =='fraction' and (mv2.units == 'percent' or mv2.units == '%'):
             mv1 = 100*mv1
-            mv1.units='percent'
+            mv1.units = mv2.units # in case it is '%'
             return mv1, mv2
-        if mv2.units =='fraction' and mv1.units == 'percent':
+        if mv2.units =='fraction' and (mv1.units == 'percent' or mv1.units == '%'):
             mv2 = 100*mv2
-            mv2.units='percent'
+            mv2.units = mv1.units
             return mv1, mv2
         if preferred_units is None:
             target_units = mv1.units
