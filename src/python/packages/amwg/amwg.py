@@ -1082,7 +1082,7 @@ class amwg_plot_set6(amwg_plot_spec):
             if filetable.filefmt.find('CAM')>=0:   # TAUX,TAUY are derived variables
                     tau_x = dv.dict_id('TAUX','',seasonid,filetable)
                     tau_y = dv.dict_id('TAUY','',seasonid,filetable)
-            elif filetable.filefmt.find('CAM')>=0:   # TAUX,TAUY are reduced variables
+            else: #if filetable.filefmt.find('CAM')>=0:   # TAUX,TAUY are reduced variables
                     tau_x = rv.dict_id('TAUX',seasonid,filetable)
                     tau_y = rv.dict_id('TAUY',seasonid,filetable)
             new_derived_var = derived_var( vid=vid_cont, inputs=[tau_x,tau_y], func=abnorm )
@@ -1099,7 +1099,7 @@ class amwg_plot_set6(amwg_plot_spec):
         vars_vec1 = {}
         vars_vec2 = {}
         try:
-            if varid=='STRESS' or varid='SURF_STRESS':
+            if varid=='STRESS' or varid=='SURF_STRESS':
                 vars1,rvars1,dvars1,var_cont1,vars_vec1,vid_cont1 =\
                     self.STRESS_setup( filetable1, varid, seasonid )
                 vars2,rvars2,dvars2,var_cont2,vars_vec2,vid_cont2 =\
