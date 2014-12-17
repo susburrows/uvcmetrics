@@ -4,4 +4,4 @@
 #import computation
 #import amwg
 # doesn't work if vcs not available: import frontend
-import git
+#import git
