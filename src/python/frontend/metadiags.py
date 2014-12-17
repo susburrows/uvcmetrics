@@ -32,7 +32,7 @@ def makeTables(modelpath, obspath, outpath, pname, outlog, errlog):
       regions = ['global', 'tropics', '\'northern extratropics\'', '\'southern extratropics\'']
       seasons = '--seasons DJF JJA ANN'
       for reg in regions:
-         cmdline = 'diags --path %s --path2 %s --set 1 --package AMWG %s --outputdir %s --region %s' % (modelpath, obspath, seasons, outpath, reg)
+         cmdline = '/home/sburrows/projects/uvcmetrics/src/python/frontend/diags.py --path %s --path2 %s --set 1 --package AMWG %s --outputdir %s --region %s' % (modelpath, obspath, seasons, outpath, reg)
          print 'Executing '+cmdline
          try:
             retcode = subprocess.check_call(cmdline, stdout=outlog, stderr=errlog, shell=True)
@@ -141,7 +141,7 @@ def generatePlots(modelpath, obspath, outpath, pname, sets=None):
                vl2 = list(set(vl) - set(vl1))
                vl = vl1
                vlstr2 = ' '.join(vl2)
-               cmdline2 = 'diags --path %s --path2 %s %s --set 5 %s %s --vars %s %s %s %s %s' % (modelpath, obspath, package, seasons, obsfname, vlstr2, outdir, postname, xml, prename)
+               cmdline2 = '/home/sburrows/projects/uvcmetrics/src/python/frontend/diags.py --path %s --path2 %s %s --set 5 %s %s --vars %s %s %s %s %s' % (modelpath, obspath, package, seasons, obsfname, vlstr2, outdir, postname, xml, prename)
             elif v5 != []:
                realsetnum = 5
                vl = list(set(v5) & set(vl))
@@ -164,7 +164,7 @@ def generatePlots(modelpath, obspath, outpath, pname, sets=None):
                vl2 = list(set(vl) - set(vl1))
                vl = vl1
                vlstr2 = ' '.join(vl2)
-               cmdline2 = 'diags --path %s --path2 %s %s --set 5 %s %s --vars %s %s %s %s %s --regions %s' % (modelpath, obspath, package, seasons, obsfname, vlstr2, outdir, postname, xml, prename, '\'southern extratropics\'')
+               cmdline2 = '/home/sburrows/projects/uvcmetrics/src/python/frontend/diags.py --path %s --path2 %s %s --set 5 %s %s --vars %s %s %s %s %s --regions %s' % (modelpath, obspath, package, seasons, obsfname, vlstr2, outdir, postname, xml, prename, '\'southern extratropics\'')
             elif v5 != []:
                realsetnum = 5
                vl = list(set(v5) & set(vl))
@@ -195,7 +195,7 @@ def generatePlots(modelpath, obspath, outpath, pname, sets=None):
                vl2 = list(set(vl) - set(vl1))
                vl = vl1
                vlstr2 = ' '.join(vl2)
-               cmdline2 = 'diags --path %s --path2 %s %s --set 5 %s %s --vars %s %s %s %s %s --regions %s' % (modelpath, obspath, package, seasons, obsfname, vlstr2, outdir, postname, xml, prename, '\'southern extratropics\'')
+               cmdline2 = '/home/sburrows/projects/uvcmetrics/src/python/frontend/diags.py --path %s --path2 %s %s --set 5 %s %s --vars %s %s %s %s %s --regions %s' % (modelpath, obspath, package, seasons, obsfname, vlstr2, outdir, postname, xml, prename, '\'southern extratropics\'')
             elif v3 != []:
                realsetnum = 3
                vl = list(set(v3) & set(vl))
@@ -235,11 +235,11 @@ def generatePlots(modelpath, obspath, outpath, pname, sets=None):
          vl = vlnew
          vlstr = ' '.join(vl)
          if setnum == 'so':
-            cmdline = 'diags --path %s --path2 %s %s --set %s %s %s --vars %s %s %s %s %s --regions %s' % (modelpath, obspath, package, realsetnum, seasons, obsfname, vlstr, outdir, postname, xml, prename, '\'southern extratropics\'')
+            cmdline = '/home/sburrows/projects/uvcmetrics/src/python/frontend/diags.py --path %s --path2 %s %s --set %s %s %s --vars %s %s %s %s %s --regions %s' % (modelpath, obspath, package, realsetnum, seasons, obsfname, vlstr, outdir, postname, xml, prename, '\'southern extratropics\'')
          elif setnum == 'testing':
-            cmdline = 'diags --path %s --path2 %s %s --set %s %s %s --vars %s %s %s %s %s --regions %s' % (modelpath, obspath, package, realsetnum, seasons, obsfname, vlstr, outdir, postname, xml, prename, '\'southern extratropics\'')
+            cmdline = '/home/sburrows/projects/uvcmetrics/src/python/frontend/diags.py --path %s --path2 %s %s --set %s %s %s --vars %s %s %s %s %s --regions %s' % (modelpath, obspath, package, realsetnum, seasons, obsfname, vlstr, outdir, postname, xml, prename, '\'southern extratropics\'')
          else:
-            cmdline = 'diags --path %s --path2 %s %s --set %s %s %s --vars %s %s %s %s %s' % (modelpath, obspath, package, realsetnum, seasons, obsfname, vlstr, outdir, postname, xml, prename)
+            cmdline = '/home/sburrows/projects/uvcmetrics/src/python/frontend/diags.py --path %s --path2 %s %s --set %s %s %s --vars %s %s %s %s %s' % (modelpath, obspath, package, realsetnum, seasons, obsfname, vlstr, outdir, postname, xml, prename)
 
          print 'Executing '+cmdline
          try:
