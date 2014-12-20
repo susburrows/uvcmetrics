@@ -21,6 +21,8 @@ def getSets(pname):
       fields = k.split()
       sets.append(fields[0])
    sets.append('topten')
+   sets.append('testing')
+   sets.append('so')
    print 'The following diagnostic sets appear to be available: %s' %sets
    return sets
 
