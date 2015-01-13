@@ -251,7 +251,7 @@ varinfo['TGCLDLWP']={'desc':'Cloud liquid water', 'sets': ['5', '3', '10', '15']
 	'NVAP 1988-1999': {
 		'filekey': 'NVAP', 'usedin': ['5', '3', '10']},
 	'MODIS Mar2000-Aug2004': {
-		'filekey': 'MODIS', 'usedin': ['5', '3']},
+		'filekey': 'MODIS', 'usedin': ['5', '3', 'so']},
 	'MODIS - U. Wisc.': {
 		'filekey': 'UWisc_LWP', 'usedin': ['so']}
 }}
