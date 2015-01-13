@@ -89,7 +89,8 @@ obsprefix={'GPCP 1979-2003 - Tropics': 'GPCP_TROP',
  'CERES 2000-2003 - Tropics': 'CERES_TROP',
  'ERA Interim Reanalysis' : 'ERAI',
  'CERES-EBAF':'CERES-EBAF',
- 'AOD Data': 'AOD_550'}
+ 'AOD Data': 'AOD_550',
+ 'U. Wisc. MODIS LWP Ocean':'UWisc_LWP'}
 
 
 varinfo = {}
@@ -250,7 +251,9 @@ varinfo['TGCLDLWP']={'desc':'Cloud liquid water', 'sets': ['5', '3', '10', '15']
 	'NVAP 1988-1999': {
 		'filekey': 'NVAP', 'usedin': ['5', '3', '10']},
 	'MODIS Mar2000-Aug2004': {
-		'filekey': 'MODIS', 'usedin': ['5', '3']}
+		'filekey': 'MODIS', 'usedin': ['5', '3']},
+	'MODIS - U. Wisc.': {
+		'filekey': 'UWisc_LWP', 'usedin': ['so']}
 }}
 varinfo['PS_NORTH']={'desc':'Surface pressure (Northern)', 'sets': ['7'], 'obssets': {
 	'NCEP Reanalysis 1979-98': {
