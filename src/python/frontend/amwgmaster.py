@@ -315,6 +315,8 @@ varinfo['Z3_500_SOUTH']={'desc':'500 mb geopotential height (Southern)', 'sets':
 		'filekey': 'ERA40', 'usedin': ['7']}
 }}
 varinfo['LHFLX']={'desc':'Surface latent heat flux', 'sets': ['5', '3', '10', '15','so'], 'obssets': {
+	'Large-Yeager 1984-2004': {
+		'filekey': 'LARYEA', 'usedin': ['so']},
 	'Woods Hole OAFLUX 1958-2006': {
 		'filekey': 'WHOI', 'usedin': ['5', '3', '10', 'so']},
 	'ECMWF Reanalysis 1979-93': {
