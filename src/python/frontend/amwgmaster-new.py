@@ -181,8 +181,13 @@ diags_collection['1']['regions'] = ['Global', 'Tropics', 'Southern_Extratropics'
 # *** Collection so (southern ocean) (part of Tier 1B) ***
 diags_collection['so'] = {}
 diags_collection['so']['desc'] = 'Tier 1B Diagnostics (Southern Ocean)'
+diags_collection['so']['seasons'] = ['ANN']
 diags_collection['so']['package'] = 'AMWG'
+diags_collection['so']['preamble'] = 'Diagnostic plot collection aimed at model evaluation in the Southern Ocean region.  See ACME Confluence page: https://acme-climate.atlassian.net/wiki/display/ATM/Tier+1b+metrics%3A+Southern+Ocean+and+Antarctica'
 diags_collection['so']['combined'] = True
+diags_collection['so']['options'] = {'logo':'no'}
+diags_collection['so']['FSNT'] = {'plottype': '5', 'obs':['CERES-EBAF_1'] }
+diags_collection['so']['FLNT'] = {'plottype': '5', 'obs':['CERES-EBAF_1'] }
 diags_collection['so']['SHFLX'] = {'plottype': '3', 'obs': ['LARYEA_1'], 'regions':['S_Hemisphere_Land']}
 diags_collection['so']['QFLX'] = {'plottype': '5', 'obs':['LARYEA_1'], 'regions':['S_Hemisphere_Land']}
 diags_collection['so']['FSNS'] = {'plottype': '7', 'obs':['LARYEA_1'] } # ANN, Global assumed
