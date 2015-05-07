@@ -1,3 +1,4 @@
+
 #!/usr/local/uvcdat/1.3.1/bin/python
 
 # Top-leve definition of AMWG Diagnostics.
@@ -107,9 +108,21 @@ class amwg_plot_spec(plot_spec):
         'TREFHT':[derived_var(
                 vid='TREFHT', inputs=['TREFHT_LAND'], outputs=['TREFHT'],
                 func=(lambda x: x) )],
+        # Compare net radiation at TOA (e.g. from CERES) to net radiation at top of model
+        'RESTOM':[derived_var(
+                vid='RESTOM', inputs=['RESTOA'], outputs=['RESTOM'],
+                func=(lambda x: x) )],
         'RESTOM':[derived_var(
                 vid='RESTOM', inputs=['FSNT','FLNT'], outputs=['RESTOM'],
                 func=aminusb )],   # RESTOM = net radiative flux
+        # Compare outgoing longwave flux (e.g. from CERES) to net longwave flux at top of model
+        'FLNT':[derived_var(
+                vid='FLNT', inputs=['FLUT'], outputs=['FLNT'],
+                func=(lambda x: x) )],
+        # Compare net shortwave flux at TOA (e.g. from CERES) to net shortwave flux at top of model
+        'FSNT':[derived_var(
+                vid='FSNT', inputs=['FSNTOA'], outputs=['FSNT'],
+                func=(lambda x: x) )],
         'CLISCCP':[
             derived_var(
                 # old style vid='CLISCCP', inputs=['FISCCP1_COSP','cosp_prs','cosp_tau'], outputs=['CLISCCP'],
